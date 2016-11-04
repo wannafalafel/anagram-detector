@@ -9,18 +9,6 @@ class Anagram
   end
 
   def match(list)
-    @anagrams = []
-    list.each do |x|
-      if x.split("").sort == word_sorter
-        @anagrams << x
-      end
-    end
-    @anagrams
+    list.select {|x| x.split("").sort == @word.split("").sort}
   end
-
-  protected
-  def word_sorter
-    @word.split("").sort
-  end
-
 end
